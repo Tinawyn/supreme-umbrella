@@ -18,7 +18,8 @@
         </activity>
         <activity
             android:name=".GreetingActivity"
-            android:label="@string/title_activity_greeting"></activity>
+            android:parentActivityName=".MainActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -10,6 +10,7 @@ import android.widget.TextView;
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String EXTRA_MESSAGE = "MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,11 +18,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    /** Called when the  user taps the Send button */
+    /** Called when the user taps the Send button */
     public void sendMessage(View view) {
         Intent intent = new Intent(this, GreetingActivity.class);
-        TextView textView = findViewById(R.id.greetingMessage);
-        String message = textView.getText().toString();
+        EditText editText = findViewById(R.id.mainName);
+        String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
